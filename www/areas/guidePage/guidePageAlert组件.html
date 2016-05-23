@@ -1,0 +1,15 @@
+<!--引导页页面-->
+<ion-view view-title="引导页" cache-view="false">
+  <button class="button button-balanced" ng-click="openModal()">打开模态窗口</button>
+
+  <button class="button button-royal" ng-click="show()">打开模态窗口</button>
+  <button class="button button-energized" ng-click="showAlert()">打开Alert</button>
+  <button class="button button-balanced" ng-click="showConfirm()">打开confirm</button>
+  <script id="modal.html" type="text/ng-template">
+    <ion-modal-view class="calm-bg">
+      我是模态窗口
+      <button ng-click="closeModal()">关闭模态窗口</button>
+    </ion-modal-view>
+  </script>
+
+</ion-view>

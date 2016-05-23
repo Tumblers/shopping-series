@@ -1,5 +1,9 @@
 
-angular.module('route', ['starter.controllers', 'starter.services'])
+angular.module('route', [
+  'guidePage.route',
+  'starter.controllers',
+  'starter.services'
+])
 
   .config(function($stateProvider, $urlRouterProvider) {
 

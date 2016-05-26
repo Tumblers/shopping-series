@@ -1,8 +1,22 @@
-// tab模板页面
-// 页面功能：引导页功能          创建日期：2020.23.23
-// 创建者：张三                 修改日期：2020.3.46
-angular.module('tab.controller', [])
-  .controller('TabCtrl',function ($scope,$state) {
 
+angular.module('tab.controller', [])
+  .controller('TabCtrl',function ($scope,$state,IndexdbJs) {
+
+    // 绑定数据对象的值
+    $scope.obj_cartCount={
+      count:""
+    }
+
+    $scope.$on('$ionicView.beforeEnter', function (e) {
+      IndexdbJs.getAll("cart",function(data){
+        if(data.length>0)
+        {
+          $scope.obj_cartCount.count="0";
+          for(var i =0;i<data.length;i++){
+            $scope.obj_cartCount.count=parseInt($scope.obj_cartCount.count)+parseInt(data[i].number);
+          }
+        }
+      },null)
+    });
 
   })

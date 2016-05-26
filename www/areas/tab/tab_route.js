@@ -1,8 +1,5 @@
 
-angular.module('tab.route', [
-    'starter.controllers',
-    'starter.services'
-  ])
+angular.module('tab.route', ['tab.controller'])
   .config(function($stateProvider, $urlRouterProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
@@ -15,47 +12,8 @@ angular.module('tab.route', [
       .state('tab', {
         url: '/tab',
         abstract: true,
-        templateUrl: 'areas/tab/tab.html'
+        templateUrl: 'areas/tab/tab.html',
+        controller: 'TabCtrl'
       })
 
-      // Each tab has its own nav history stack:
-
-      .state('tab.dash', {
-        url: '/dash',
-        views: {
-          'tab-dash': {
-            templateUrl: 'areas/tab/tab-dash.html',
-            controller: 'DashCtrl'
-          }
-        }
-      })
-
-      .state('tab.chats', {
-        url: '/chats',
-        views: {
-          'tab-chats': {
-            templateUrl: 'templates/tab-chats.html',
-            controller: 'ChatsCtrl'
-          }
-        }
-      })
-      .state('tab.chat-detail', {
-        url: '/chats/:chatId',
-        views: {
-          'tab-chats': {
-            templateUrl: 'templates/chat-detail.html',
-            controller: 'ChatDetailCtrl'
-          }
-        }
-      })
-
-      .state('tab.account', {
-        url: '/account',
-        views: {
-          'tab-account': {
-            templateUrl: 'templates/tab-account.html',
-            controller: 'AccountCtrl'
-          }
-        }
-      });
   });

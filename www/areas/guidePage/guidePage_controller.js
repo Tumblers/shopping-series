@@ -21,6 +21,7 @@ angular.module('guidePage.controller', ['guidePage.service'])
 
 
     $scope.func_goHome=function(){
+      localStorage["isFirst"]=true;
       $state.go('tab.home');
     }
 

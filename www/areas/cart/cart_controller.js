@@ -99,5 +99,15 @@ angular.module('cart.controller', ['cart.service'])
       });
     }
 
+    //返回前一页面方法
+    $scope.func_goBack=function(){
+      $ionicHistory.goBack();
+    }
+
+    $scope.func_goHome=function(){
+      $state.go('tab.home');
+    }
+
+
 
   }]);

@@ -6,10 +6,18 @@ angular.module('route', [
   'category.route',
   'goodsList.route',
   'details.route',
-  'cart.route'
+  'cart.route',
+  'account.route'
 ])
   .config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/tab/home');
+    // 第一次登陆
+    if(localStorage["isFirst"])
+    {
+      $urlRouterProvider.otherwise('/tab/home');
+    }
+    else {
+      $urlRouterProvider.otherwise('/guidePage');
+    }
 
   });

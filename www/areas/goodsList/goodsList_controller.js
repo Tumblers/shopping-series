@@ -106,6 +106,11 @@ angular.module('goodsList.controller', ['goodsList.service'])
     }
 
 
+    //返回前一页面方法
+    $scope.func_goBack=function(){
+      $ionicHistory.goBack();
+    }
+
 
 
 

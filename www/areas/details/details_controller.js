@@ -1,6 +1,6 @@
 // 详细页面控制器
 angular.module('details.controller', ['details.service'])
-  .controller('DetailsCtrl', function($scope,GlobalVariable,$stateParams,$ionicHistory,IndexdbJs) {
+  .controller('DetailsCtrl', function($scope,GlobalVariable,$state,$stateParams,$ionicHistory,IndexdbJs) {
 
     // 购物车徽章位置显示的数量
     $scope.obj_cartCount = {
@@ -104,5 +104,18 @@ angular.module('details.controller', ['details.service'])
         $scope.obj_goodsDetailInfo.number--;
       }
     }
+
+    //返回前一页面方法
+    $scope.func_goBack=function(){
+      $ionicHistory.goBack();
+    }
+
+
+    $scope.func_goHome=function(){
+      $state.go('tab.home');
+    }
+
+
+
 
   })
